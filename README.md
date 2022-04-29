@@ -18,7 +18,7 @@ implementation 'com.google.zxing:core:3.3.2'
 ### Permission:
 Add This Permission for saving your generated code
 ```xml
-<uses-permission android:name="android.permission.WRITE_EXT ERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 ```
 ### How to use this Library:
 After importing this library, use the following lines to use this library.
@@ -41,6 +41,8 @@ try {
 Save QR Code as Image 
 ```java
 // Save with location, value, bitmap returned and type of Image(JPG/PNG).
+QRGSaver qrgSaver = new QRGSaver();
+qrgSaver.save(savePath, edtValue.getText().toString().trim(), bitmap, QRGContents.ImageType.IMAGE_JPEG);
 ```
 
 For more Details [Click Here](https://github.com/androidmads/QRGenerator/blob/master/app/src/main/java/androidmads/example/MainActivity.java)
