@@ -18,16 +18,16 @@ implementation 'com.google.zxing:core:3.3.2'
 ### Permission:
 Add This Permission for saving your generated code
 ```xml
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.WRITE_EXT ERNAL_STORAGE"/>
 ```
 ### How to use this Library:
 After importing this library, use the following lines to use this library.
 The following lines are used to generated the QR Code
 ```java
 // Initializing the QR Encoder with your value to be encoded, type you required and Dimension
-QRGEncoder qrgEncoder = new QRGEncoder(inputValue, null, QRGContents.Type.TEXT, smallerDimension);
-qrgEncoder.setColorBlack(Color.RED);
-qrgEncoder.setColorWhite(Color.BLUE);
+QRNEncoder qrgEncoder = new QRNEncoder(inputValue, null, QRNContents.Type.TEXT, smallerDimension);
+qrNEncoder.setColorBlack(Color.RED);
+qrNEncoder.setColorWhite(Color.BLUE);
 try {
   // Getting QR-Code as Bitmap
   bitmap = qrgEncoder.getBitmap();
@@ -41,8 +41,6 @@ try {
 Save QR Code as Image 
 ```java
 // Save with location, value, bitmap returned and type of Image(JPG/PNG).
-QRGSaver qrgSaver = new QRGSaver();
-qrgSaver.save(savePath, edtValue.getText().toString().trim(), bitmap, QRGContents.ImageType.IMAGE_JPEG);
 ```
 
 For more Details [Click Here](https://github.com/androidmads/QRGenerator/blob/master/app/src/main/java/androidmads/example/MainActivity.java)

@@ -59,8 +59,8 @@ public class MainActivity extends AppCompatActivity {
                             inputValue, null,
                             QRGContents.Type.TEXT,
                             smallerDimension);
-                    qrgEncoder.setColorBlack(Color.RED);
-                    qrgEncoder.setColorWhite(Color.BLUE);
+                    qrgEncoder.setColorBlack(Color.BLACK);
+                    qrgEncoder.setColorWhite(Color.WHITE);
                     try {
                         bitmap = qrgEncoder.getBitmap();
                         qrImage.setImageBitmap(bitmap);
@@ -73,23 +73,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.save_barcode).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
-                    try {
-                        boolean save = new QRGSaver().save(savePath, edtValue.getText().toString().trim(), bitmap, QRGContents.ImageType.IMAGE_JPEG);
-                        String result = save ? "Image Saved" : "Image Not Saved";
-                        Toast.makeText(activity, result, Toast.LENGTH_LONG).show();
-                        edtValue.setText(null);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                } else {
-                    ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0);
-                }
-            }
-        });
+
 
     }
 
